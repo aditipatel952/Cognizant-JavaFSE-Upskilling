@@ -1,0 +1,317 @@
+/* ========================================
+   CSS3 Exercise 10: Responsive Modern UI
+   Mobile-first + glassmorphism design
+   ======================================== */
+
+/* Global Layout */
+body {
+    margin: 0;
+    padding: 12px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Navigation */
+nav {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(10px);
+    padding: 12px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 12px;
+    background: #3b82f6;
+    color: white;
+    text-align: center;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #2563eb;
+    transform: scale(1.02);
+}
+
+/* Header */
+#mainHeader {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Welcome Banner */
+#welcomeBanner {
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    box-shadow: 0 10px 25px rgba(59,130,246,0.2);
+}
+
+/* Headings */
+h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+/* Event Grid */
+.event-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 25px;
+}
+
+/* Cards */
+.event-card {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Images */
+.event-img {
+    width: 100%;
+    border-radius: 16px;
+    max-width: 180px;
+    display: block;
+    margin: auto;
+}
+
+/* Filter & Search */
+.filter-search-row {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.filter-group,
+.search-group {
+    width: 100%;
+}
+
+/* Inputs */
+input,
+select,
+textarea,
+button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.02);
+}
+
+/* Form Sections */
+form,
+#preferences,
+#location,
+#contact {
+    background: rgba(255,255,255,0.85);
+    border-radius: 20px;
+    padding: 22px;
+    margin-top: 25px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+/* Tables */
+.events-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 320px;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.events-table th {
+    background: #3b82f6;
+    color: white;
+    padding: 14px;
+}
+
+.events-table td {
+    padding: 12px;
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.events-table tr:nth-child(even) td {
+    background: #f9fafb;
+}
+
+/* Video Section */
+#video {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#video video {
+    width: 100%;
+    border-radius: 18px;
+}
+
+/* Bulletin */
+.bulletin {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 18px;
+    column-count: 1;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    padding: 25px;
+    text-align: center;
+    color: white;
+    background: #111827;
+    border-radius: 20px 20px 0 0;
+}
+
+/* ========================================
+   TABLET VIEW
+   ======================================== */
+@media screen and (min-width: 768px) {
+
+    body {
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .filter-search-row {
+        flex-direction: row;
+    }
+
+    #mainHeader {
+        font-size: 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .bulletin {
+        column-count: 2;
+        column-gap: 25px;
+    }
+}
+
+/* ========================================
+   DESKTOP VIEW
+   ======================================== */
+@media screen and (min-width: 1024px) {
+
+    main {
+        max-width: 1200px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #welcomeBanner {
+        padding: 50px;
+    }
+
+    #mainHeader {
+        font-size: 42px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .event-img {
+        max-width: 220px;
+    }
+
+    nav ul li a {
+        padding: 14px 24px;
+    }
+}
+
+/* ========================================
+   PRINT MODE
+   ======================================== */
+@media print {
+
+    nav,
+    button,
+    #video {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+        padding: 0;
+    }
+
+    .event-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

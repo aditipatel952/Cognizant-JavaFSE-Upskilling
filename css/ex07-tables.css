@@ -1,0 +1,83 @@
+/* ========================================
+   CSS3 Exercise 7: Table Styling
+   border-collapse, padding, background,
+   zebra striping with nth-child(even)
+   ======================================== */
+
+/* Gallery - replaced table with CSS grid */
+#events table {
+    margin: 30px auto;
+    border-collapse: separate;
+    border-spacing: 16px;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+}
+
+#events table td {
+    padding: 16px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--gray-200);
+    transition: var(--transition);
+}
+
+#events table td:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+#events table figcaption {
+    font-size: 13px;
+    color: var(--gray-500);
+    margin-top: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Admin events table */
+.events-table {
+    width: 100%;
+    max-width: 650px;
+    margin: 25px auto;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.events-table th {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 16px 20px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.events-table td {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--gray-200);
+    font-size: 15px;
+    color: var(--gray-700);
+}
+
+.events-table tr:last-child td {
+    border-bottom: none;
+}
+
+.events-table tr:nth-child(even) {
+    background: var(--gray-100);
+}
+
+.events-table tr:nth-child(odd) {
+    background: white;
+}
+
+.events-table tr:hover td {
+    background: #ebf4ff;
+}

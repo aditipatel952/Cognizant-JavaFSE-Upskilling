@@ -1,0 +1,247 @@
+/* ========================================
+   CSS3 Exercise 8: Box Model & Layout Control
+   margin, padding, border, outline,
+   visibility:hidden vs display:none
+   ======================================== */
+
+/* Form container */
+form {
+    background: white;
+    padding: 35px 30px;
+    border-radius: var(--radius);
+    max-width: 520px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: 600;
+    color: var(--gray-700);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-family: inherit;
+    color: var(--gray-800);
+    background: var(--gray-100);
+    transition: var(--transition);
+}
+
+input:hover, select:hover, textarea:hover {
+    border-color: var(--gray-400);
+    background: white;
+}
+
+/* Outline on focus */
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15);
+}
+
+input.error, select.error, textarea.error {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 4px rgba(252, 129, 129, 0.15);
+}
+
+/* Button styling */
+button {
+    width: 100%;
+    padding: 16px 24px;
+    margin-top: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Output / confirmation */
+output {
+    display: block;
+    margin: 16px 0;
+    padding: 14px 18px;
+    background: linear-gradient(135deg, #c6f6d5, #9ae6b4);
+    border-radius: var(--radius-sm);
+    color: #22543d;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid #9ae6b4;
+}
+
+/* Event card box model */
+.event-card {
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Image borders */
+.event-img {
+    border: 3px solid white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.event-img:hover {
+    border-color: var(--primary);
+}
+
+/* Video styling */
+#video {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+#video video {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    max-width: 100%;
+}
+
+#videoStatus {
+    font-weight: 700;
+    color: var(--success);
+    margin-top: 12px;
+    font-size: 16px;
+    padding: 10px 20px;
+    background: #f0fff4;
+    border-radius: var(--radius-sm);
+    display: inline-block;
+}
+
+/* Preferences & Location sections */
+#preferences, #location {
+    background: white;
+    padding: 30px;
+    border-radius: var(--radius);
+    max-width: 520px;
+    margin: 25px auto;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+#preferences label, #location label {
+    font-size: 14px;
+}
+
+#preferences select, #location select {
+    margin-bottom: 15px;
+}
+
+#preferences button, #location button {
+    width: auto;
+    padding: 12px 28px;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#location button {
+    background: linear-gradient(135deg, var(--success), #38a169);
+}
+
+#location button:hover {
+    box-shadow: 0 8px 25px rgba(72, 187, 120, 0.35);
+}
+
+/* Coordinates & Error display */
+#coordinates {
+    margin-top: 16px;
+    padding: 14px;
+    background: #ebf8ff;
+    border-radius: var(--radius-sm);
+    color: #2b6cb0;
+    font-weight: 500;
+    border: 1px solid #bee3f8;
+}
+
+#geoError {
+    margin-top: 12px;
+    padding: 12px;
+    background: #fff5f5;
+    border-radius: var(--radius-sm);
+    color: #c53030;
+    font-weight: 500;
+    border: 1px solid #fed7d7;
+}
+
+/* Contact section */
+#contact {
+    margin-top: 20px;
+    padding: 30px;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--gray-200);
+}
+
+/* Footer box model */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    background: linear-gradient(135deg, var(--dark), var(--gray-800));
+    color: white;
+    border-radius: 16px 16px 0 0;
+}
+
+/* Comparison: visibility vs display */
+.hidden-visibility {
+    visibility: hidden;
+}
+
+.hidden-display {
+    display: none;
+}
+
+/* Fee display */
+#feeDisplay {
+    margin: 10px 0;
+    padding: 12px 16px;
+    background: linear-gradient(135deg, #fefcbf, #f6e05e);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--gray-800);
+    text-align: center;
+    border: 1px solid #f6e05e;
+}
+
+/* Character count */
+#charCount {
+    font-weight: 700;
+    color: var(--primary);
+    font-size: 20px;
+}
